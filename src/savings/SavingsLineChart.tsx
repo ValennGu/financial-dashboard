@@ -1,4 +1,4 @@
-import { Card, AreaChart, Title } from "@tremor/react";
+import { AreaChart, Title } from "@tremor/react";
 import { useSavings } from "./useSavings";
 
 const valueFormatter = function(number: number) {
