@@ -7,7 +7,7 @@ function App() {
   return (
     <>
       <Toaster
-        position="top-right"
+        position="bottom-center"
         reverseOrder={false}
       />
       <Grid numItems={5} className="gap-2">
