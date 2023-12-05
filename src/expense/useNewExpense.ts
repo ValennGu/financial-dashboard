@@ -35,7 +35,7 @@ export const useNewExpense = () => {
 
   const submitExpense = () => {
     setLoading(true);
-    const collectionReference = collection(db, '2024');
+    const collectionReference = collection(db, '2023');
     const documentReference = doc(collectionReference, 'december');
 
     (async () => {
