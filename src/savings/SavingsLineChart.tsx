@@ -21,7 +21,7 @@ export const SavingsLineChart = ({ year }: Props) => {
   
   return (
     <>
-      <Title>Savings per month on {year}</Title>
+      <Title className="mt-3">Savings per month on {year}</Title>
       <AreaChart
         className="h-72 mt-3"
         data={chartData}
