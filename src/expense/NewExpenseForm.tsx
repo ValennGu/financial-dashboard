@@ -23,7 +23,7 @@ enum ExpenseCategory {
 }
 
 export const NewExpenseForm = () => {
-  const { expense, loading, changeHandler, submitExpense } = useNewExpense();
+  const { expense, loading, disabled, changeHandler, submitExpense } = useNewExpense();
 
   const onClickAddExpense = () => {
     submitExpense();
@@ -72,7 +72,7 @@ export const NewExpenseForm = () => {
         className="mt-3"
         style={{ width: '100%' }}
         color='emerald'
-        disabled={loading}
+        disabled={disabled}
         loading={loading}
         onClick={onClickAddExpense}
       >

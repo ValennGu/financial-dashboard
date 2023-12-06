@@ -16,7 +16,6 @@ function App() {
         <Col numColSpanLg={3} numColSpan={5}>
           <NewExpenseForm />
           <SavingsLineChart year="2023"/>
-          <SavingsLineChart year="2023"/>
         </Col>
         <Col numColSpanLg={1} numColSpan={0}/>
       </Grid>

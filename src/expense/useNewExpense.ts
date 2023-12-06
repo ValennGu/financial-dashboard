@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { toast } from 'react-hot-toast';
 import { format } from 'date-fns';
 import { arrayUnion, collection, doc, updateDoc } from 'firebase/firestore';
@@ -24,6 +24,11 @@ const defaultExpense: Expense = {
 export const useNewExpense = () => {
   const [expense, setExpense] = useState<Expense>(defaultExpense);
   const [loading, setLoading] = useState(false);
+  const [disabled, setDisabled] = useState(true);
+
+  useEffect(() => {
+    setDisabled(expense.title === '' || expense.amount === '');
+  },[expense]);
 
   const changeHandler = (partialExpense: Partial<Expense>) => {
     setExpense((prev) => ({
@@ -54,6 +59,7 @@ export const useNewExpense = () => {
   return {
     expense,
     loading,
+    disabled,
     submitExpense,
     changeHandler,
   };
