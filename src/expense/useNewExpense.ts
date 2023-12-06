@@ -8,14 +8,14 @@ import uuid from 'react-uuid';
 export type Expense = {
   id: string;
   title: string;
-  amount: number;
+  amount: string;
   category: string;
   date: string;
 };
 
 const defaultExpense: Expense = {
   id: '',
-  amount: 0,
+  amount: '',
   title: '',
   category: 'Home',
   date: format(new Date(), 'MM/dd/yyyy'),
@@ -39,7 +39,7 @@ export const useNewExpense = () => {
     const documentReference = doc(collectionReference, 'december');
 
     (async () => {
-      await updateDoc(documentReference, { expenses: arrayUnion(expense) });
+      await updateDoc(documentReference, { expenses: arrayUnion({ ...expense, amount: Number(expense.amount)}) });
     })()
       .then((() => {
         toast.success(`New expense registered successfuly!`);

@@ -34,21 +34,22 @@ export const NewExpenseForm = () => {
       <TextInput
         value={expense.title}
         className="mt-3"
-        placeholder="Expense name ..."
+        placeholder="Type"
         onChange={(event) => changeHandler({ title: event.target.value })}
       />
       <NumberInput
         value={expense.amount}
         className="mt-1"
         icon={CurrencyDollarIcon}
-        placeholder="Amount..."
-        min={0}
-        onChange={(event) => changeHandler({ amount: Number(event.target.value) })}
+        placeholder="00.00"
+        enableStepper={false}
+        onChange={(event) => changeHandler({ amount: event.target.value })}
       />
       <Select
         value={expense.category}
         className="mt-1"
         defaultValue={expense.category}
+        enableClear={false}
         onValueChange={(event) => changeHandler({ category: event })}
       >
         {Object.values(ExpenseCategory).map((category) => (
@@ -60,6 +61,7 @@ export const NewExpenseForm = () => {
       <DatePicker
         value={new Date(expense.date)}
         className="mt-1"
+        enableClear={false}
         onValueChange={(event) =>
           changeHandler({
             date: format(new Date(event!.toString()), 'MM/dd/yyyy'),
