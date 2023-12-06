@@ -20,10 +20,10 @@ export const SavingsLineChart = ({ year }: Props) => {
   })
   
   return (
-    <div className="mt-4 ml-4 mr-4">
+    <>
       <Title>Savings per month on {year}</Title>
       <AreaChart
-        className="h-72 mt-4"
+        className="h-72 mt-3"
         data={chartData}
         index="date"
         categories={["Savings"]}
@@ -31,6 +31,6 @@ export const SavingsLineChart = ({ year }: Props) => {
         valueFormatter={valueFormatter}
         showAnimation={true}
       />
-    </div>
+    </>
   );
 }

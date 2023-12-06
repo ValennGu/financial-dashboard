@@ -29,8 +29,8 @@ export const NewExpenseForm = () => {
     submitExpense();
   };
   return (
-    <div className='mt-4 mr-4 ml-4'>
-      <Title>New Expense</Title>
+    <>
+      <Title className='mt-3'>New Expense</Title>
       <TextInput
         value={expense.title}
         className="mt-3"
@@ -78,6 +78,6 @@ export const NewExpenseForm = () => {
       >
         Add Expense
       </Button>
-    </div>
+    </>
   );
 };
