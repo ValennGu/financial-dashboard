@@ -11,16 +11,7 @@ import {
 } from '@tremor/react';
 import { CurrencyDollarIcon } from '@heroicons/react/solid';
 import { useNewExpense } from './useNewExpense';
-
-enum ExpenseCategory {
-  Mortgage = 'Mortgage',
-  Home = 'Home',
-  Groceries = 'Groceries',
-  Gym = 'Gym',
-  Gas = 'Gas',
-  Services = 'Services',
-  Extra = 'Extra',
-}
+import { ExpenseCategory } from './expenseCategory';
 
 export const NewExpenseForm = () => {
   const { expense, loading, disabled, changeHandler, submitExpense } = useNewExpense();

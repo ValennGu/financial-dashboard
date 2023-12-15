@@ -1,12 +1,14 @@
 import { List, ListItem, Text, Subtitle, Flex } from "@tremor/react";
-import { useExpenses } from "./useExpenses";
+import { Expense } from "./useNewExpense";
 
-export const ExpensesList = () => {
-  const { expenses } = useExpenses('2023', 'december');
+interface Props {
+  expenses: Expense[];
+}
 
+export const ExpensesList = ({ expenses }: Props) => {
   return (
     <>
-      <List className="mt-2">
+      <List className="mt-6">
         {expenses.map((item) => (
           <ListItem key={item.id}>
             <Flex justifyContent="start">

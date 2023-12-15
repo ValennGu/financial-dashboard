@@ -1,10 +1,10 @@
 import { Toaster } from 'react-hot-toast';
-import './App.css'
 import { SavingsLineChart } from './savings/SavingsLineChart';
-import { Grid, Col, Tab, TabGroup, TabList, TabPanel, TabPanels, Divider } from '@tremor/react';
+import { Grid, Col, Tab, TabGroup, TabList, TabPanel, TabPanels } from '@tremor/react';
 import { NewExpenseForm } from './expense/NewExpenseForm';
-import { TrendingUpIcon, DocumentReportIcon } from '@heroicons/react/outline';
-import { ExpensesList } from './expense/ExpensesList';
+import { TrendingUpIcon, DocumentReportIcon, PlusCircleIcon } from '@heroicons/react/outline';
+import { ExpensesReport } from './expense/ExpensesReport';
+import './App.css'
 
 function App() {
   return (
@@ -18,14 +18,16 @@ function App() {
         <Col numColSpanLg={3} numColSpan={5}>
           <TabGroup>
             <TabList color='emerald'>
-              <Tab icon={DocumentReportIcon}>Expenses</Tab>
-              <Tab icon={TrendingUpIcon}>Statistics</Tab>
+              <Tab icon={DocumentReportIcon}>Report</Tab>
+              <Tab icon={PlusCircleIcon}>Create</Tab>
+              <Tab icon={TrendingUpIcon}>Savings</Tab>
             </TabList>
             <TabPanels>
               <TabPanel>
+                <ExpensesReport />
+              </TabPanel>
+              <TabPanel>
                 <NewExpenseForm />
-                <Divider />
-                <ExpensesList />
               </TabPanel>
               <TabPanel>
                 <SavingsLineChart year="2023"/>
