@@ -1,4 +1,4 @@
-import { BarList, Title, ValueFormatter } from "@tremor/react";
+import { BarList, ValueFormatter } from "@tremor/react";
 import { ExpenseCategory } from "./expenseCategory";
 import { Expense } from "./useNewExpense";
 
